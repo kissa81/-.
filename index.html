@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piece of Cake: Полный Тренажер Идиом для Экзаменов</title>
+<style>
+       * { box-sizing: border-box; }
+       body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; line-height: 1.6; }
+       header { background: linear-gradient(135deg, #4f46e5, #3730a3); color: white; padding: 50px 20px; text-align: center; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15); }
+       header h1 { margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.5px; }
+       header p { margin: 10px 0 0; opacity: 0.9; font-size: 16px; font-weight: 400; }
+       .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+       .section-title { border-left: 4px solid #4f46e5; padding-left: 12px; margin: 40px 0 20px 0; color: #0f172a; font-size: 24px; font-weight: 700; }
+       .category-title { color: #4f46e5; font-size: 18px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin: 35px 0 15px 0; padding-bottom: 5px; border-bottom: 2px solid #e2e8f0; }
+       .idiom-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.01); margin-bottom: 15px; border: 1px solid #e2e8f0; transition: transform 0.2s; }
+       .idiom-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.04); }
+       .idiom-name { font-size: 20px; font-weight: 700; color: #1e293b; margin: 0 0 5px 0; display: flex; align-items: center; justify-content: space-between; }
+       .idiom-name span { color: #4f46e5; background: #e0e7ff; padding: 2px 10px; border-radius: 20px; font-size: 12px; }
+       .idiom-translate { font-size: 16px; font-weight: 500; color: #475569; margin-bottom: 12px; }
+       .idiom-example { background: #f1f5f9; padding: 12px 16px; border-radius: 8px; font-size: 14px; border-left: 4px solid #cbd5e1; color: #334155; }
+       .idiom-example b { color: #4f46e5; }
+       .quiz-card { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; margin-top: 20px; }
+       .progress-bar { height: 6px; background-color: #e2e8f0; border-radius: 3px; margin-bottom: 25px; overflow: hidden; }
+       .progress-fill { height: 100%; background-color: #10b981; width: 20%; transition: width 0.3s ease; }
+       .question-num { color: #64748b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+       #question-text { font-size: 19px; font-weight: 700; margin-top: 0; color: #0f172a; line-height: 1.4; }
+       .options-grid { margin-top: 20px; }
+       .option-btn { display: block; width: 100%; background: #f8fafc; border: 2px solid #e2e8f0; padding: 16px; margin-bottom: 12px; border-radius: 10px; font-size: 16px; font-weight: 500; text-align: left; cursor: pointer; transition: all 0.2s ease; color: #334155; }
+       .option-btn:hover { background: #f1f5f9; border-color: #cbd5e1; }
+       .option-btn.correct { background: #dcfce7; border-color: #22c55e; color: #14532d; font-weight: 600; }
+       .option-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #7f1d1d; }
+       .next-btn { display: none; width: 100%; background: #4f46e5; color: white; border: none; padding: 16px; font-size: 16px; font-weight: 700; border-radius: 10px; cursor: pointer; margin-top: 15px; transition: background 0.2s; }
+       .next-btn:hover { background: #4338ca; }
+       .result-container { text-align: center; display: none; padding: 20px 0; }
+       .result-score { font-size: 56px; font-weight: 800; color: #4f46e5; margin: 15px 0; }
+       #feedback-text { font-size: 18px; font-weight: 600; color: #334155; margin-bottom: 25px; }
+       .restart-btn { background: #4f46e5; color: white; border: none; padding: 14px 28px; font-size: 16px; font-weight: 600; border-radius: 10px; cursor: pointer; transition: background 0.2s; }
+       .restart-btn:hover { background: #4338ca; }
+       footer { text-align: center; padding: 40px 20px; color: #64748b; font-size: 14px; margin-top: 60px; border-top: 1px solid #e2e8f0; }
+</style>
+</head>
+<body>
+<header>
+<h1>Piece of Cake 🍰</h1>
+<p>Полный справочник и тренажер английских идиом для подготовки к ОГЭ, ЕГЭ и IELTS</p>
+</header>
+<div class="container">
+<h2 class="section-title">📚 Академический справочник идиом</h2>
+<p style="color: #64748b; margin-top: -10px; margin-bottom: 30px;">30 важнейших выражений, структурированных по основным темам международных и государственных экзаменов.</p>
+<div class="category-title">1. Семья, родственники и отношения</div>
+<div class="idiom-card">
+<div class="idiom-name">Flesh and blood <span>IELTS / ЕГЭ</span></div>
+<div class="idiom-translate">Значение: Родная кровь, близкий родственник.</div>
+<div class="idiom-example"><b>Пример:</b> "Of course I find my brother annoying sometimes, but he is my own <b>flesh and blood</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">See eye to eye <span>ОГЭ / ЕГЭ</span></div>
+<div class="idiom-translate">Значение: Сходиться во взглядах, полностью соглашаться.</div>
+<div class="idiom-example"><b>Пример:</b> "I don't always <b>see eye to eye</b> with my parents regarding my future career."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Run in the family <span>ОГЭ / ЕГЭ</span></div>
+<div class="idiom-translate">Значение: Быть семейной чертой, передаваться по наследству.</div>
+<div class="idiom-example"><b>Пример:</b> "Excellent musical talent seems to <b>run in their family</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Bring home the bacon <span>IELTS / Труд</span></div>
+<div class="idiom-translate">Значение: Обеспечивать семью, зарабатывать деньги.</div>
+<div class="idiom-example"><b>Пример:</b> "In many modern households, both parents work to <b>bring home the bacon</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Born with a silver spoon in one's mouth <span>IELTS</span></div>
+<div class="idiom-translate">Значение: Родиться в богатой/привилегированной семье.</div>
+<div class="idiom-example"><b>Пример:</b> "He never had to worry about tuition fees; he was <b>born with a silver spoon in his mouth</b>."</div>
+</div>
+<div class="category-title">2. Дружба, досуг и социальная жизнь</div>
+<div class="idiom-card">
+<div class="idiom-name">Through thick and thin <span>ЕГЭ / IELTS</span></div>
+<div class="idiom-translate">Значение: Сквозь огонь и воду, несмотря на все трудности.</div>
+<div class="idiom-example"><b>Пример:</b> "Best friends support each other <b>through thick and thin</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Speak of the devil <span>ОГЭ / ЕГЭ</span></div>
+<div class="idiom-translate">Значение: Легок на помине (когда человек появляется сразу после упоминания).</div>
+<div class="idiom-example"><b>Пример:</b> "Did you hear what Max did? Oh, <b>speak of the devil</b>, here he comes!"</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Two peas in a pod <span>ОГЭ / Дружба</span></div>
+<div class="idiom-translate">Значение: Похожи как две капли воды.</div>
+<div class="idiom-example"><b>Пример:</b> "Alex and Tom love the same video games and clothes, they are like <b>two peas in a pod</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Get on like a house on fire <span>IELTS</span></div>
+<div class="idiom-translate">Значение: Быстро и легко подружиться, ладить душа в душу.</div>
+<div class="idiom-example"><b>Пример:</b> "I introduced my classmate to my cousin, and they <b>got on like a house on fire</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Keep someone at arm's length <span>IELTS</span></div>
+<div class="idiom-translate">Значение: Держать кого-то на расстоянии, не сближаться.</div>
+<div class="idiom-example"><b>Пример:</b> "She is very polite, but she prefers to <b>keep new acquaintances at arm's length</b>."</div>
+</div>
+<div class="category-title">3. Школа, образование и интеллект</div>
+<div class="idiom-card">
+<div class="idiom-name">A piece of cake <span>ОГЭ / ЕГЭ</span></div>
+<div class="idiom-translate">Значение: Очень простое дело (проще пареной репы).</div>
+<div class="idiom-example"><b>Пример:</b> "The math assignment turned out to be <b>a piece of cake</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">To burn the midnight oil <span>ОГЭ / ЕГЭ</span></div>
+<div class="idiom-translate">Значение: Засиживаться допоздна за учебой.</div>
+<div class="idiom-example"><b>Пример:</b> "I had to <b>burn the midnight oil</b> to prepare for my history presentation."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Pass with flying colours <span>ЕГЭ / IELTS</span></div>
+<div class="idiom-translate">Значение: Сдать экзамены с блеском (на высший балл).</div>
+<div class="idiom-example"><b>Пример:</b> "If you practice writing daily, you will <b>pass OGE with flying colours</b>."</div>
+</div>
+<div class="idiom-card">
+<div class="idiom-name">Hit the books <span>ОГЭ / Студенты</span></div>
+<div class="idiom-translate">Значение: Сесть за зубрежку, усердно учиться.</div>
+<div class="idiom-example"><b>Пример:</b> "The exams start next week, so it's time to <b>hit the books</b>."</div>
+</div>
+доступно контекстное менюLearn by heart ОГЭ / ЕГЭ
+Значение: Учить наизусть, зазубривать.
+Пример: "We were asked to learn this long poem by heart for the literature class."
+4. Эмоции, чувства и настроение
+Over the moon ОГЭ / ЕГЭ
+Значение: На седьмом небе от счастья.
+Пример: "She was over the moon when she received the acceptance letter from the college."
+
+Down in the dumps IELTS / Тоска
+Значение: Как в воду опущенный, в унынии, грустный.
+Пример: "He has been a bit down in the dumps since he failed his driving test."
+
+Have butterflies in one's stomach ЕГЭ / IELTS
+Значение: Волноваться, нервничать (до бабочек в животе).
+Пример: "I always have butterflies in my stomach before public speaking."
+
+Make one's blood boil IELTS / Гнев
+Значение: Бесить, приводить в бешенство, заставлять кровь кипеть.
+Пример: "Cruelty to animals completely makes my blood boil."
+
+On cloud nine ОГЭ / ЕГЭ
+Значение: На седьмом небе от счастья (аналог over the moon).
+Пример: "Winning the school marathon made him feel like he was on cloud nine."
+5. Здоровье, образ жизни и погода
+Under the weather ОГЭ / ЕГЭ
+Значение: Плохо себя чувствовать, недомогать.
+Пример: "I felt a bit under the weather, so I decided to stay home."
+
+As fit as a fiddle ЕГЭ / IELTS
+Значение: Здоров как бык, в отличной физической форме.
+Пример: "My grandfather exercises daily, so he is as fit as a fiddle."
+
+Rain or shine ОГЭ / Погода
+Значение: При любой погоде, что бы ни случилось.
+Пример: "The school sports day will take place tomorrow, rain or shine."
+
+Once in a blue moon ОГЭ / ЕГЭ
+Значение: Очень редко (крайне нечастое событие).
+Пример: "I visit fast-food restaurants only once in a blue moon."
+
+Break a leg! ОГЭ / Пожелание
+Значение: Желаю удачи! (Ни пуха, ни пера).
+Пример: "Today is your speaking exam. Break a leg!"
+6. Деньги, покупки и стоимость ресурсов
+Cost an arm and a leg ОГЭ / ЕГЭ
+Значение: Стоить запредельно дорого.
+Пример: "The new flagship smartphone costs an arm and a leg."
+
+A penny for your thoughts IELTS
+Значение: О чем ты задумался? (Способ спросить о мыслях человека).
+Пример: "You have been silent for ten minutes. A penny for your thoughts?"
+
+On a tight budget ЕГЭ / IELTS
+Значение: При ограниченном бюджете, жесткая экономия.
+Пример: "Students often live on a tight budget while at university."
+
+Make ends meet IELTS / Кризис
+Значение: Сводить концы с концами.
+Пример: "With inflation rising, it is harder for families to make ends meet."
+
+Cheap as chips IELTS / Сленг
+Значение: Очень дешево, за сущие копейки.
+Пример: "Don't worry about the price of the tickets, they are as cheap as chips."
+🎯 Экзаменационный тест-тренажер
+
+Вопрос 1 из 5
+Загрузка вопроса...
+Следующий вопрос →
+
+Тестирование завершено!
+0 / 5
+Загрузка результата...
+Пройти тест заново
+
+© 2026 Проектная работа по ФГОС | Разработано для выпускников 9 и 11 классов
+const quizData = [
+{
+question: "Какое выражение описывает полное согласие с родителями или друзьями во взглядах?",
+answers: ["See eye to eye", "Keep at arm's length", "Through thick and thin"],
+correct: 0
+},
+{
+question: "What does the idiom 'through thick and thin' mean in loyal friendship context?",
+answers: ["To be friends only during good times", "To support each other through all difficulties and troubles", "To end friendship quickly"],
+correct: 1
+},
+{
+question: "Which expression is equivalent to 'passing exams with top marks / excellently'?",
+answers: ["Hit the books", "Burn the midnight oil", "Pass with flying colours"],
+correct: 2
+},
+{
+question: "You need to describe extreme nervousness before the IELTS Speaking section. What would you say?",
+answers: ["I have butterflies in my stomach", "I am as fit as a fiddle", "I am down in the dumps"],
+correct: 0
+},
+{
+question: "Как переводится экономическое устойчивое выражение 'on a tight budget'?",
+answers: ["С запредельно высокой ценой", "При сильно ограниченном бюджете", "Купленный со скидкой"],
+correct: 1
+}
+];
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+function loadQuestion() {
+answered = false;
+document.getElementById("next-button").style.display = "none";
+const q = quizData[currentQuestion];
+document.getElementById("question-text").innerText = q.question;
+document.getElementById("q-counter").innerText = Вопрос ${currentQuestion + 1} из ${quizData.length};
+document.getElementById("progress").style.width = ${((currentQuestion + 1) / quizData.length) * 100}%;
+const optionsContainer = document.getElementById("options-container");
+optionsContainer.innerHTML = "";
+q.answers.forEach((answer, index) => {
+const button = document.createElement("button");
+button.className = "option-btn";
+button.innerText = answer;
+button.onclick = () => selectAnswer(index, button);
+optionsContainer.appendChild(button);
+});
+}
+function selectAnswer(selectedIndex, clickedButton) {
+if (answered) return;
+answered = true;
+const q = quizData[currentQuestion];
+const buttons = document.querySelectorAll(".option-btn");
+if (selectedIndex === q.correct) {
+clickedButton.classList.add("correct");
+score++;
+} else {
+clickedButton.classList.add("wrong");
+buttons[q.correct].classList.add("correct");
+}
+document.getElementById("next-button").style.display = "block";
+}
+function nextQuestion() {
+currentQuestion++;
+if (currentQuestion < quizData.length) {
+loadQuestion();
+} else {
+showResults();
+}
+}
+function showResults() {
+document.getElementById("quiz-zone").style.display = "none";
+document.getElementById("result-zone").style.display = "block";
+document.getElementById("score-text").innerText = ${score} / ${quizData.length};
+let feedback = "";
+if (score === 5) feedback = "Великолепно! Идеальный уровень лексики для ОГЭ, ЕГЭ и IELTS! 🎯";
+else if (score >= 3) feedback = "Хороший результат! Но рекомендуем еще раз перечитать примеры из справочника выше. 👍";
+else feedback = "Нужно подтянуть лексику. Используй наш справочник для повторения материала! 📚";
+document.getElementById("feedback-text").innerText = feedback;
+}
+function restartQuiz() {
+currentQuestion = 0;
+score = 0;
+document.getElementById("quiz-zone").style.display = "block";
+document.getElementById("result-zone").style.display = "none";
+loadQuestion();
+}
+loadQuestion();
+доступно контекстное меню
