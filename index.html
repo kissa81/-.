@@ -6,39 +6,107 @@
     <title>Piece of Cake: Главное Меню</title>
     <style>
         * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; line-height: 1.6; }
-               /* Замените block header на этот код */
-        header { background: linear-gradient(135deg, #374151, #111827); color: white; padding: 50px 20px; text-align: center; box-shadow: 0 4px 12px rgba(55, 65, 81, 0.15); }
-        header h1 { margin: 0; font-size: 32px; font-weight: 800; }
-        header p { margin: 10px 0 0; opacity: 0.9; font-size: 16px; }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background-color: #f3f4f6; 
+            color: #374151; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6;
+        }
+        
+        /* Шапка с утонченным цветочным фоном в серых тонах */
+        header { 
+            background-color: #e5e7eb;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://w3.org" width="60" height="60" viewBox="0 0 60 60"><path d="M30 10c2-3 5-5 8-5 5 0 9 4 9 9 0 4-3 8-7 11l-10 10-10-10c-4-3-7-7-7-11 0-5 4-9 9-9 3 0 6 2 8 5zm0 15c1.5-2 3.5-3.5 5.5-3.5 3 0 5.5 2.5 5.5 5.5 0 2.5-2 5-4.5 7L30 40l-6.5-6c-2.5-2-4.5-4.5-4.5-7 0-3 2.5-5.5 5.5-5.5 2 0 4 1.5 5.5 3.5z" fill="%239ca3af" fill-opacity="0.15"/></svg>');
+            padding: 60px 20px; 
+            text-align: center; 
+            border-bottom: 1px solid #d1d5db;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+        header h1 { margin: 0; font-size: 34px; font-weight: 800; color: #111827; }
+        header p { margin: 12px 0 0; color: #4b5563; font-size: 16px; font-weight: 500; }
+        
         .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .section-title { border-left: 4px solid #4f46e5; padding-left: 12px; margin: 40px 0 20px 0; color: #0f172a; font-size: 24px; font-weight: 700; }
+        .section-title { border-left: 4px solid #6b7280; padding-left: 12px; margin: 40px 0 20px 0; color: #111827; font-size: 24px; font-weight: 700; }
+        
         .menu-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 40px; }
         @media(min-width: 600px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
-        .menu-link { display: block; background: white; padding: 20px; border-radius: 12px; text-decoration: none; color: #1e293b; font-weight: 700; font-size: 16px; border: 1px solid #e2e8f0; transition: all 0.2s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
-        .menu-link:hover { transform: translateY(-2px); border-color: #4f46e5; box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1); color: #4f46e5; }
-        .quiz-card { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
-        .progress-bar { height: 6px; background-color: #e2e8f0; border-radius: 3px; margin-bottom: 25px; overflow: hidden; }
-        .progress-fill { height: 100%; background-color: #10b981; width: 0%; transition: width 0.3s ease; }
-        .question-num { color: #64748b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
-        #question-text { font-size: 19px; font-weight: 700; margin-top: 0; color: #0f172a; }
+        
+        .menu-link { 
+            display: block; 
+            background: #ffffff; 
+            padding: 22px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: #374151; 
+            font-weight: 700; 
+            font-size: 16px; 
+            border: 1px solid #e5e7eb; 
+            transition: all 0.25s ease; 
+        }
+        .menu-link:hover { 
+            transform: translateY(-2px); 
+            border-color: #9ca3af; 
+            background-color: #f9fafb;
+            color: #111827; 
+        }
+        
+        .quiz-card { 
+            background: #ffffff; 
+            padding: 35px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+            border: 1px solid #e5e7eb; 
+        }
+        .progress-bar { height: 6px; background-color: #f3f4f6; border-radius: 3px; margin-bottom: 25px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: #4b5563; width: 0%; transition: width 0.3s ease; }
+        .question-num { color: #6b7280; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+        #question-text { font-size: 19px; font-weight: 700; margin-top: 0; color: #111827; }
+        
         .options-grid { margin-top: 20px; }
-        .option-btn { display: block; width: 100%; background: #f8fafc; border: 2px solid #e2e8f0; padding: 16px; margin-bottom: 12px; border-radius: 10px; font-size: 16px; font-weight: 500; text-align: left; cursor: pointer; color: #334155; transition: all 0.2s; }
-        .option-btn:hover { background: #f1f5f9; border-color: #cbd5e1; }
-        .option-btn.correct { background: #dcfce7; border-color: #22c55e; color: #14532d; font-weight: 600; }
-        .option-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #7f1d1d; }
-        .next-btn { display: none; width: 100%; background: #4f46e5; color: white; border: none; padding: 16px; font-size: 16px; font-weight: 700; border-radius: 10px; cursor: pointer; }
-        .next-btn:hover { background: #4338ca; }
+        .option-btn { 
+            display: block; 
+            width: 100%; 
+            background: #f9fafb; 
+            border: 2px solid #e5e7eb; 
+            padding: 16px; 
+            margin-bottom: 12px; 
+            border-radius: 10px; 
+            font-size: 16px; 
+            font-weight: 500; 
+            text-align: left; 
+            cursor: pointer; 
+            color: #374151; 
+            transition: all 0.2s ease; 
+        }
+        .option-btn:hover { background: #f3f4f6; border-color: #d1d5db; color: #111827; }
+        .option-btn.correct { background: #e2e8f0; border-color: #4b5563; color: #0f172a; font-weight: 600; }
+        .option-btn.wrong { background: #fca5a5; border-color: #ef4444; color: #7f1d1d; }
+        
+        .next-btn { 
+            display: none; 
+            width: 100%; 
+            background: #4b5563; 
+            color: #ffffff; 
+            border: none; 
+            padding: 16px; 
+            font-size: 16px; 
+            font-weight: 700; 
+            border-radius: 10px; 
+            cursor: pointer; 
+        }
+        .next-btn:hover { background: #374151; }
         .result-container { text-align: center; display: none; padding: 20px 0; }
-        .result-score { font-size: 56px; font-weight: 800; color: #4f46e5; margin: 15px 0; }
-        footer { text-align: center; padding: 40px 20px; color: #64748b; font-size: 14px; margin-top: 60px; border-top: 1px solid #e2e8f0; }
+        .result-score { font-size: 56px; font-weight: 800; color: #111827; margin: 15px 0; }
+        footer { text-align: center; padding: 40px 20px; color: #9ca3af; font-size: 14px; margin-top: 60px; border-top: 1px solid #e5e7eb; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Piece of Cake 🍰</h1>
-    <p>Интерактивный навигатор по идиомам ФИПИ для подготовки к экзаменам</p>
+    <p>Интерактивный навигатор по устойчивым выражениям для подготовки к экзаменам</p>
 </header>
 
 <div class="container">
@@ -75,101 +143,6 @@
     <p>© 2026 Проектная работа по ФГОС | Разработано для выпускников 9 и 11 классов</p>
 </footer>
 
-<script>
-    const quizData = [
-        {
-            question: "Какое выражение описывает полное согласие с родителями или друзьями во взглядах?",
-            answers: ["See eye to eye", "Keep at arm's length", "Through thick and thin"],
-            correct: 0
-        },
-        {
-            question: "What does the idiom 'through thick and thin' mean in loyal friendship context?",
-            answers: ["To be friends only during good times", "To support each other through all difficulties and troubles", "To end friendship quickly"],
-            correct: 1
-        },
-        {
-            question: "Which expression is equivalent to 'passing exams with top marks / excellently'?",
-            answers: ["Hit the books", "Burn the midnight oil", "Pass with flying colours"],
-            correct: 2
-        },
-        {
-            question: "You need to describe extreme nervousness before the IELTS Speaking section. What would you say?",
-            answers: ["I have butterflies in my stomach", "I am as fit as a fiddle", "I am down in the dumps"],
-            correct: 0
-        },
-        {
-            question: "Как переводится экономическое устойчивое выражение 'on a tight budget'?",
-            answers: ["С запредельно высокой ценой", "При сильно ограниченном бюджете", "Купленный со скидкой"],
-            correct: 1
-        }
-    ];
-
-    let currentQuestion = 0;
-    let score = 0;
-    let answered = false;
-
-    function loadQuestion() {
-        answered = false;
-        document.getElementById("next-button").style.display = "none";
-        const q = quizData[currentQuestion];
-        document.getElementById("question-text").innerText = q.question;
-        document.getElementById("q-counter").innerText = `Вопрос ${currentQuestion + 1} из ${quizData.length}`;
-        document.getElementById("progress").style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
-        const optionsContainer = document.getElementById("options-container");
-        optionsContainer.innerHTML = "";
-        q.answers.forEach((answer, index) => {
-            const button = document.createElement("button");
-            button.className = "option-btn";
-            button.innerText = answer;
-            button.onclick = () => selectAnswer(index, button);
-            optionsContainer.appendChild(button);
-        });
-    }
-
-    function selectAnswer(selectedIndex, clickedButton) {
-        if (answered) return;
-        answered = true;
-        const q = quizData[currentQuestion];
-        const buttons = document.querySelectorAll(".option-btn");
-        if (selectedIndex === q.correct) {
-            clickedButton.classList.add("correct");
-            score++;
-        } else {
-            clickedButton.classList.add("wrong");
-            buttons[q.correct].classList.add("correct");
-        }
-        document.getElementById("next-button").style.display = "block";
-    }
-
-    function nextQuestion() {
-        currentQuestion++;
-        if (currentQuestion < quizData.length) {
-            loadQuestion();
-        } else {
-            showResults();
-        }
-    }
-
-    function showResults() {
-        document.getElementById("quiz-zone").style.display = "none";
-        document.getElementById("result-zone").style.display = "block";
-        document.getElementById("score-text").innerText = `${score} / ${quizData.length}`;
-        let feedback = "";
-        if (score === 5) feedback = "Великолепно! Идеальный уровень лексики для ОГЭ, ЕГЭ и IELTS! 🎯";
-        else if (score >= 3) feedback = "Хороший результат! Но рекомендуем еще раз перечитать примеры из справочника выше. 👍";
-        else feedback = "Нужно подтянуть лексику. Используй наш справочник для повторения материала! 📚";
-        document.getElementById("feedback-text").innerText = feedback;
-    }
-
-    function restartQuiz() {
-        currentQuestion = 0;
-        score = 0;
-        document.getElementById("quiz-zone").style.display = "block";
-        document.getElementById("result-zone").style.display = "none";
-        loadQuestion();
-    }
-
-    loadQuestion();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
