@@ -15,7 +15,7 @@
         .idiom-example { background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 14px; border-left: 4px solid #cbd5e1; }
         .quiz-card { background: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e5e7eb; margin-top: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
         .progress-bar { height: 6px; background-color: #f3f4f6; border-radius: 3px; margin-bottom: 20px; overflow: hidden; }
-        .progress-fill { height: 100%; Image background-color: #4b5563; width: 0%; transition: width 0.3s ease; }
+        .progress-fill { height: 100%; background-color: #4b5563; width: 0%; transition: width 0.3s ease; }
         .option-btn { display: block; width: 100%; background: #f9fafb; border: 2px solid #e5e7eb; padding: 14px; margin-bottom: 10px; border-radius: 10px; font-size: 15px; text-align: left; cursor: pointer; color: #374151; transition: all 0.2s; }
         .option-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
         .option-btn.correct { background: #e2e8f0; border-color: #4b5563; font-weight: 600; }
@@ -31,7 +31,7 @@
     <div class="idiom-card">
         <div class="idiom-name">A drop in the ocean</div>
         <div class="idiom-translate">Значение: Капля в море (незначительная часть чего-то огромного).</div>
-        <div class="idiom-example">"Cleaning one beach is just <b>a drop in the ocean</b>."</div>
+        <div class="idiom-example">"Cleaning just one local beach feels like <b>a drop in the ocean</b>."</div>
     </div>
     <div class="idiom-card">
         <div class="idiom-name">Rain or shine</div>
@@ -39,7 +39,6 @@
         <div class="idiom-example">"We plant trees every Saturday, <b>rain or shine</b>."</div>
     </div>
 
-    <!-- ТЕСТ ПО ТЕМЕ -->
     <div class="quiz-card">
         <h3>🎯 Мини-тест по теме: Природа</h3>
         <div id="quiz-zone">
@@ -57,8 +56,8 @@
 
 <script>
     const quizData = [
-        { question: "Что означает выражение 'A drop in the ocean'?", answers: ["Капля в море", "Вода в океане", "Большой шторм"], correct: 0 },
-        { question: "Как сказать по-английски 'При любой погоде'?", answers: ["Once in a blue moon", "Rain or shine", "In the same boat"], correct: 1 }
+        { question: "Как правильно перевести выражение 'A drop in the ocean'?", answers: ["Капля в море", "Шторм в океане", "Чистая пресная вода"], correct: 0 },
+        { question: "Какое выражение переводится как 'При любой погоде, что бы ни случилось'?", answers: ["Once in a blue moon", "Rain or shine", "In the same boat"], correct: 1 }
     ];
     let currentQuestion = 0, score = 0, answered = false;
     function loadQuestion() {
